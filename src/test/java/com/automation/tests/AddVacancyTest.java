@@ -1,60 +1,63 @@
 package com.automation.tests;
 
+import com.automation.pages.AddVacancyPage;
+import com.automation.pages.HomePage;
+import com.automation.pages.LoginPage;
+import com.automation.pages.VacanyListingPage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
 
 public class AddVacancyTest {
+    WebDriver driver;
+
+    @BeforeMethod
+    public void setUp(){
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
+        driver.get("https://opensource-demo.orangehrmlive.com/");
+    }
+
+    @AfterMethod
+    public void quit(){
+        driver.quit();
+    }
 
     @Test
     public void verifyUserCanAddVacancy() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().deleteAllCookies();
+        LoginPage loginPage = new LoginPage();
+        loginPage.doLogin();
 
-        driver.get("https://opensource-demo.orangehrmlive.com/");
+        HomePage homePage = new HomePage();
+        homePage.clickOnVacanciesTab();
 
-        WebElement userName = driver.findElement(By.id("txtUsername"));
-        userName.sendKeys("Admin" + Keys.ENTER);
+        VacanyListingPage vacanyListingPage = new VacanyListingPage();
+        vacanyListingPage.clickOnAddBtn();
 
-        WebElement passWord = driver.findElement(By.id("txtPassword"));
-        passWord.sendKeys("admin123" + Keys.ENTER);
+        AddVacancyPage addVacancyPage = new AddVacancyPage();
+        addVacancyPage.fillAddVacancyDetails();
+        addVacancyPage.clickOnSaveBtn();
+    }
 
-        WebElement recruitmentTab = driver.findElement(By.id("menu_recruitment_viewRecruitmentModule"));
-        recruitmentTab.click();
+    @Test
+    public void verifyUserCanDeleteVacancy() throws Exception {
+        LoginPage loginPage = new LoginPage();
+        loginPage.doLogin();
 
-        WebElement vacanciesTab = driver.findElement(By.id("menu_recruitment_viewJobVacancy"));
-        vacanciesTab.click();
+        HomePage homePage = new HomePage();
+        homePage.clickOnVacanciesTab();
 
-        WebElement AddBtn = driver.findElement(By.xpath("//div[@class='top']/input[@name='btnAdd']"));
-        AddBtn.click();
-
-        WebElement jobTitleDropDown = driver.findElement(By.id("addJobVacancy_jobTitle"));
-        Select catDropDownSelect = new Select(jobTitleDropDown);
-        Thread.sleep(3000);
-        catDropDownSelect.selectByVisibleText("Automation Tester");
-        Thread.sleep(3000);
-
-
-        WebElement vacancyNameField = driver.findElement(By.id("addJobVacancy_name"));
-        vacancyNameField.sendKeys("tester" + Keys.ENTER);
-        WebElement HiringManagerField = driver.findElement(By.id("addJobVacancy_hiringManager"));
-        HiringManagerField.sendKeys("Admin A" + Keys.ENTER);
-        Thread.sleep(3000);
-
-        WebElement saveBtn = driver.findElement(By.id("btnSave"));
-        saveBtn.click();
-
-        Thread.sleep(3000);
-
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("target//screenshot.png"));
-
-        Thread.sleep(3000);
-        driver.quit();
+        VacanyListingPage vacanyListingPage = new VacanyListingPage();
+        vacanyListingPage.selectVacanyCheckBox();
+        vacanyListingPage.clickOnDeleteVacancy();
+        vacanyListingPage.clickOnOkOnDeleteVacancyPopUp();
+        vacanyListingPage.verifyDeleteVacancySuccessMsg();
     }
 }
