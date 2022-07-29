@@ -14,21 +14,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class AddVacancyTest {
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().deleteAllCookies();
-        driver.get("https://opensource-demo.orangehrmlive.com/");
-    }
-
-    @AfterMethod
-    public void quit(){
-        driver.quit();
-    }
+public class AddVacancyTest extends BaseTest{
 
     @Test
     public void verifyUserCanAddVacancy() throws Exception {

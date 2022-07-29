@@ -1,9 +1,13 @@
 package com.automation.pages;
 
+import com.automation.utils.DriverUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class VacanyListingPage {
+
+    WebDriver driver = DriverUtils.getDriver();
 
     public void clickOnAddBtn(){
         WebElement AddBtn = driver.findElement(By.xpath("//div[@class='top']/input[@name='btnAdd']"));
