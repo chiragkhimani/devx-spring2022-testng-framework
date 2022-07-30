@@ -18,7 +18,7 @@ public class AddVacancyTest extends BaseTest{
 
     @Test
     public void verifyUserCanAddVacancy() throws Exception {
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = new LoginPage() ;
         loginPage.doLogin();
 
         HomePage homePage = new HomePage();

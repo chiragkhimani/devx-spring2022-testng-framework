@@ -5,9 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class VacanyListingPage {
-
-    WebDriver driver = DriverUtils.getDriver();
+public class VacanyListingPage extends BasePage{
 
     public void clickOnAddBtn(){
         WebElement AddBtn = driver.findElement(By.xpath("//div[@class='top']/input[@name='btnAdd']"));
