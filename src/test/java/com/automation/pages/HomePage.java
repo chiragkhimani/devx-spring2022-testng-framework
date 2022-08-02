@@ -3,6 +3,7 @@ package com.automation.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class HomePage extends BasePage {
@@ -36,6 +37,10 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//table//td[text()='No Records Found']")
     WebElement noRecordFoundText;
+
+    public HomePage(){
+        PageFactory.initElements(driver,this);
+    }
 
 
     public void clickOnVacanciesTab() {

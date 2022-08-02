@@ -7,21 +7,28 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class LoginPage extends BasePage{
 
-    public void doLogin() {
-        WebElement userName = driver.findElement(By.id("txtUsername"));
-        userName.sendKeys("Admin" + Keys.ENTER);
+    @FindBy(id = "txtUsername")
+    WebElement userName;
 
-        WebElement passWord = driver.findElement(By.id("txtPassword"));
+    @FindBy(id = "txtPassword")
+    WebElement passWord;
+
+    public LoginPage(){
+        PageFactory.initElements(driver,this);
+    }
+
+    public void doLogin() {
+        userName.sendKeys("Admin" + Keys.ENTER);
         passWord.sendKeys("admin123" + Keys.ENTER);
     }
 
     public void verifyPage() {
-        WebElement userName = driver.findElement(By.id("txtUsername"));
-        WebElement passWord = driver.findElement(By.id("txtPassword"));
         Assert.assertTrue(userName.isDisplayed(),"User is not on login page");
         Assert.assertTrue(passWord.isDisplayed(),"User is not on login page");
     }

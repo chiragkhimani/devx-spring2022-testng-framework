@@ -5,9 +5,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class AddVacancyPage extends BasePage{
+
+    @FindBy(id = "addJobVacancy_hiringManager")
+    WebElement HiringManagerField;
+
+    @FindBy(id = "addJobVacancy_name")
+    WebElement vacancyNameField;
+
+    @FindBy(id = "addJobVacancy_jobTitle")
+    WebElement jobTitleDropDown;
+
+    @FindBy(id = "btnSave")
+    WebElement saveBtn;
+
+    public AddVacancyPage(){
+        PageFactory.initElements(driver,this);
+    }
 
     public void fillAddVacancyDetails(){
         selectJobTitle();
@@ -16,23 +34,19 @@ public class AddVacancyPage extends BasePage{
     }
 
     public void selectJobTitle(){
-        WebElement jobTitleDropDown = driver.findElement(By.id("addJobVacancy_jobTitle"));
         Select catDropDownSelect = new Select(jobTitleDropDown);
         catDropDownSelect.selectByVisibleText("Automation Tester");
     }
 
     public void enterVacancyName(){
-        WebElement vacancyNameField = driver.findElement(By.id("addJobVacancy_name"));
         vacancyNameField.sendKeys("tester" + Keys.ENTER);
     }
 
     public void enterHiringManager(){
-        WebElement HiringManagerField = driver.findElement(By.id("addJobVacancy_hiringManager"));
         HiringManagerField.sendKeys("Admin A" + Keys.ENTER);
     }
 
     public void clickOnSaveBtn(){
-        WebElement saveBtn = driver.findElement(By.id("btnSave"));
         saveBtn.click();
     }
 }

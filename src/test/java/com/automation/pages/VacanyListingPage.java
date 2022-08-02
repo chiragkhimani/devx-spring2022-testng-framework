@@ -4,29 +4,47 @@ import com.automation.utils.DriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class VacanyListingPage extends BasePage{
 
+    @FindBy(id = "//div[@class='top']/input[@name='btnAdd']")
+    WebElement AddBtn;
+
+    @FindBy(id = "//input[contains(@id,'ohrmList_chkSelectRecord')]")
+    WebElement vacancyCheckBx;
+
+    @FindBy(id = "btnDelete")
+    WebElement deleteBtn;
+
+    @FindBy(id = "dialogDeleteBtn")
+    WebElement deleteBtnOkBtn;
+
+    @FindBy(xpath = "//div[contains(@class,'success')]")
+    WebElement successMsg;
+
+    public VacanyListingPage(){
+        PageFactory.initElements(driver,this);
+    }
+
     public void clickOnAddBtn(){
-        WebElement AddBtn = driver.findElement(By.xpath("//div[@class='top']/input[@name='btnAdd']"));
         AddBtn.click();
     }
 
     public void selectVacanyCheckBox(){
-        WebElement vacancyCheckBx = driver.findElement(By.xpath("//input[contains(@id,'ohrmList_chkSelectRecord')]"));
         vacancyCheckBx.click();
     }
 
     public void clickOnDeleteVacancy(){
-        driver.findElement(By.id("btnDelete")).click();
+        deleteBtn.click();
     }
 
     public void clickOnOkOnDeleteVacancyPopUp(){
-        driver.findElement(By.id("dialogDeleteBtn")).click();
+       deleteBtnOkBtn.click();
     }
 
     public void verifyDeleteVacancySuccessMsg(){
-        WebElement successMsg = driver.findElement(By.xpath("//div[contains(@class,'success')]"));
         System.out.println(successMsg.getText());
     }
 

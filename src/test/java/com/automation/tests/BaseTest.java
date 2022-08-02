@@ -19,11 +19,11 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(){
+        DriverUtils.createDriver();
         loginPage = new LoginPage();
         homePage = new HomePage();
         vacanyListingPage = new VacanyListingPage();
         addVacancyPage = new AddVacancyPage();
-        DriverUtils.createDriver();
     }
 
     @AfterMethod
