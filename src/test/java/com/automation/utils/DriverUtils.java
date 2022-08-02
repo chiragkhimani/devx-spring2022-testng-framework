@@ -20,4 +20,5 @@ public class DriverUtils {
     public static WebDriver getDriver(){
         return driver;
     }
+
 }

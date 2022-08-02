@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AddVacancyPage extends BasePage{
 
-    WebDriver driver = DriverUtils.getDriver();
-
     public void fillAddVacancyDetails(){
         selectJobTitle();
         enterVacancyName();
