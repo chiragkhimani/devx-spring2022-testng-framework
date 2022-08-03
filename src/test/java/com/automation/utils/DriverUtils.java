@@ -15,13 +15,15 @@ import java.time.Duration;
 import java.util.HashMap;
 
 public class DriverUtils {
-    public static final String USERNAME = "chirag192";
-    public static final String AUTOMATE_KEY = "RJqy1pAAu667AecZqXWx";
-    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+    public static final String USERNAME = ConfigReader.getProperty("bs.username");
+    public static final String AUTOMATE_KEY = ConfigReader.getProperty("bs.key");
+    public static final String URL = String.format(ConfigReader.getProperty("bs.url"),USERNAME,AUTOMATE_KEY);
     static WebDriver driver;
 
 
     public static void createDriver()  {
+        // Desire capabilities is what type of session we want
+        // We can copy-paste below capabilities from Browser Stack website
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "Chrome");
         capabilities.setCapability("browserVersion", "latest");

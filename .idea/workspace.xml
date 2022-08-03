@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83187aaf-bb6e-4910-ac3b-08bd648ba8b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/AddVacancyPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/VacanyListingPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/tests/AddVacancyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/tests/AddVacancyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/automation/tests/AddVacancyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/automation/tests/AddVacancyTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/utils/DriverUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/utils/DriverUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/data/configdata.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/data/configdata.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +43,7 @@
       <recent name="C:\Users\khima\IdeaProjects\TestNGAutomationFramework\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AddVacancyTest.verifyUserCanDeleteVacancy">
+  <component name="RunManager" selected="TestNG.LogoutTest.verifyUserCanLogout">
     <configuration name="AddVacancyTest.verifyUserCanAddVacancy" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestNGAutomationFramework" />
       <extension name="coverage">
@@ -84,8 +80,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LogoutTest.verifyUserCanLogout" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestNGAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.automation.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.automation.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.automation.tests.LogoutTest" />
+      <option name="METHOD_NAME" value="verifyUserCanLogout" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LogoutTest.verifyUserCanLogout" />
         <item itemvalue="TestNG.AddVacancyTest.verifyUserCanDeleteVacancy" />
         <item itemvalue="TestNG.AddVacancyTest.verifyUserCanAddVacancy" />
       </list>
@@ -112,5 +127,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
