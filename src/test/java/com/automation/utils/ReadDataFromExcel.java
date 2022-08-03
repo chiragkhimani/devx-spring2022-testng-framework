@@ -19,14 +19,8 @@ public class ReadDataFromExcel {
             XSSFRow row = sheet.getRow(i);
 
             for(int j=0; j<row.getPhysicalNumberOfCells(); j++){
-
-                if(row.getCell(j).getCellType().equals(CellType.STRING)){
-                    System.out.print(row.getCell(j).getStringCellValue() +"  ");
-                }else{
-                    System.out.print(row.getCell(j).getNumericCellValue() +"  ");
-                }
+                    System.out.print(row.getCell(j).toString() +"  ");
             }
-
             System.out.println();
         }
 
