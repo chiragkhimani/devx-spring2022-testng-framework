@@ -4,6 +4,7 @@ import com.automation.pages.AddVacancyPage;
 import com.automation.pages.HomePage;
 import com.automation.pages.LoginPage;
 import com.automation.pages.VacanyListingPage;
+import com.automation.utils.ConfigReader;
 import com.automation.utils.DriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +20,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(){
+        ConfigReader.initProperties();
         DriverUtils.createDriver();
         loginPage = new LoginPage();
         homePage = new HomePage();

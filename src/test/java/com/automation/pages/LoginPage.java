@@ -1,6 +1,7 @@
 package com.automation.pages;
 
 import com.automation.tests.AddVacancyTest;
+import com.automation.utils.ConfigReader;
 import com.automation.utils.DriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -24,8 +25,8 @@ public class LoginPage extends BasePage{
     }
 
     public void doLogin() {
-        userName.sendKeys("Admin" + Keys.ENTER);
-        passWord.sendKeys("admin123" + Keys.ENTER);
+        userName.sendKeys(ConfigReader.getProperty("login.username") + Keys.ENTER);
+        passWord.sendKeys(ConfigReader.getProperty("login.password") + Keys.ENTER);
     }
 
     public void verifyPage() {

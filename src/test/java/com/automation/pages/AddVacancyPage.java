@@ -1,5 +1,6 @@
 package com.automation.pages;
 
+import com.automation.utils.ConfigReader;
 import com.automation.utils.DriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -35,15 +36,15 @@ public class AddVacancyPage extends BasePage{
 
     public void selectJobTitle(){
         Select catDropDownSelect = new Select(jobTitleDropDown);
-        catDropDownSelect.selectByVisibleText("Automation Tester");
+        catDropDownSelect.selectByVisibleText(ConfigReader.getProperty("add.vacancy.cat.dropdown.value"));
     }
 
     public void enterVacancyName(){
-        vacancyNameField.sendKeys("tester" + Keys.ENTER);
+        vacancyNameField.sendKeys(ConfigReader.getProperty("add.vacancy.name") + Keys.ENTER);
     }
 
     public void enterHiringManager(){
-        HiringManagerField.sendKeys("Admin A" + Keys.ENTER);
+        HiringManagerField.sendKeys(ConfigReader.getProperty("add.vacancy.hiring.manager") + Keys.ENTER);
     }
 
     public void clickOnSaveBtn(){
