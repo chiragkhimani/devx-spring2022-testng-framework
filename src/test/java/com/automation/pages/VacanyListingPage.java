@@ -9,10 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class VacanyListingPage extends BasePage{
 
-    @FindBy(id = "//div[@class='top']/input[@name='btnAdd']")
+    @FindBy(xpath = "//div[@class='top']/input[@name='btnAdd']")
     WebElement AddBtn;
 
-    @FindBy(id = "//input[contains(@id,'ohrmList_chkSelectRecord')]")
+    @FindBy(xpath = "//input[contains(@id,'ohrmList_chkSelectRecord')]")
     WebElement vacancyCheckBx;
 
     @FindBy(id = "btnDelete")
@@ -23,10 +23,6 @@ public class VacanyListingPage extends BasePage{
 
     @FindBy(xpath = "//div[contains(@class,'success')]")
     WebElement successMsg;
-
-    public VacanyListingPage(){
-        PageFactory.initElements(driver,this);
-    }
 
     public void clickOnAddBtn(){
         AddBtn.click();

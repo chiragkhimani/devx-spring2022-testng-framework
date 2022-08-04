@@ -24,9 +24,6 @@ public class AddVacancyPage extends BasePage{
     @FindBy(id = "btnSave")
     WebElement saveBtn;
 
-    public AddVacancyPage(){
-        PageFactory.initElements(driver,this);
-    }
 
     public void fillAddVacancyDetails(){
         selectJobTitle();

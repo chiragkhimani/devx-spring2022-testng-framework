@@ -20,9 +20,7 @@ public class LoginPage extends BasePage{
     @FindBy(id = "txtPassword")
     WebElement passWord;
 
-    public LoginPage(){
-        PageFactory.initElements(driver,this);
-    }
+
 
     public void doLogin() {
         userName.sendKeys(ConfigReader.getProperty("login.username") + Keys.ENTER);

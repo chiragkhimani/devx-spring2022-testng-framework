@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83187aaf-bb6e-4910-ac3b-08bd648ba8b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/automation/utils/CommonMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/pages/AddVacancyPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/AddVacancyPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/pages/VacanyListingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/pages/VacanyListingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/tests/AddUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/tests/AddUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/tests/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/utils/DriverUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/utils/DriverUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/data/configdata.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/data/configdata.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/automation/pages/VacanyListingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/automation/pages/VacanyListingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/automation/tests/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/automation/tests/BaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/automation/utils/DriverUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/automation/utils/DriverUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/data/configdata.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/data/configdata.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +55,24 @@
       <recent name="C:\Users\khima\IdeaProjects\TestNGAutomationFramework\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LogoutTest.verifyUserCanLogout">
+  <component name="RunManager" selected="TestNG.AddVacancyTest.verifyUserCanDeleteVacancy">
+    <configuration name="AddVacancyTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestNGAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.automation.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.automation.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.automation.tests.AddVacancyTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AddVacancyTest.verifyUserCanAddVacancy" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestNGAutomationFramework" />
       <extension name="coverage">
@@ -100,9 +129,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LogoutTest.verifyUserCanLogout" />
         <item itemvalue="TestNG.AddVacancyTest.verifyUserCanDeleteVacancy" />
+        <item itemvalue="TestNG.AddVacancyTest" />
         <item itemvalue="TestNG.AddVacancyTest.verifyUserCanAddVacancy" />
+        <item itemvalue="TestNG.LogoutTest.verifyUserCanLogout" />
       </list>
     </recent_temporary>
   </component>

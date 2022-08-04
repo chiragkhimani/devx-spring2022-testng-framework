@@ -1,10 +1,15 @@
 package com.automation.pages;
 
+import com.automation.utils.CommonMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class HomePage extends BasePage {
 
@@ -38,11 +43,6 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//table//td[text()='No Records Found']")
     WebElement noRecordFoundText;
 
-    public HomePage(){
-        PageFactory.initElements(driver,this);
-    }
-
-
     public void clickOnVacanciesTab() {
         recruitmentTab.click();
         vacanciesTab.click();
@@ -54,10 +54,12 @@ public class HomePage extends BasePage {
 
     public void clickOnLogoutLink() {
         logoutLink.click();
+        CommonMethods.waitForElementVisible(logoutLink);
     }
 
     public void verifyPage() {
         Assert.assertTrue(userBadge.isDisplayed(), "User is not on home page");
+        CommonMethods.takeScreenshot();
     }
 
     public void clickOnUsersLinkFromUserManagement() {
